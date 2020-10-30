@@ -4,6 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'mvn -f javademos-master/ssgsems/pom.xml -B -DskipTests clean package'
+        archiveArtifacts '**/targets/*.war'
       }
     }
 
